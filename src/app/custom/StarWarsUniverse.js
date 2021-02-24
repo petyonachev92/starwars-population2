@@ -7,7 +7,7 @@ const EVENTS = {
     UNIVERSE_POPULATED: 'universe_populated'
 }
 
-export class StarWarsUniverese extends EventEmitter {
+export default class StarWarsUniverese extends EventEmitter {
     constructor() {
         super();
         this.films = new Array()

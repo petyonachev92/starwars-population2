@@ -9,7 +9,7 @@ const EVENTS = {
 
 let i = 0;
 
-export class Planet extends EventEmitter {
+export default class Planet extends EventEmitter {
     constructor(name, popDel = 1, peopleData) {
         super()
         this.name = name
