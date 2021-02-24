@@ -1,6 +1,6 @@
 import EventEmitter from "eventemitter3";
-import { delay } from "../utils";
-import { Person } from "./Person";
+import delay from "../utils";
+import Person from "./Person";
 
 const EVENTS = {
     PERSON_BORN: 'person_born',

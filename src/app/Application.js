@@ -1,6 +1,5 @@
 import config from '../config';
 import EventEmitter from 'eventemitter3';
-import { delay } from './utils';
 import StarWarsUniverese from './custom/StarWarsUniverse';
 
 const EVENTS = {

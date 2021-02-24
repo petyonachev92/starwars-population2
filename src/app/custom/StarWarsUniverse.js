@@ -1,13 +1,13 @@
 import EventEmitter from "eventemitter3";
-import { Film } from "./Film";
-import { Planet } from "./Planet";
+import Film from "./Film";
+import Planet from "./Planet";
 
 const EVENTS = {
     FILM_ADDED: 'film_added',
     UNIVERSE_POPULATED: 'universe_populated'
 }
 
-export default class StarWarsUniverese extends EventEmitter {
+export class StarWarsUniverese extends EventEmitter {
     constructor() {
         super();
         this.films = new Array()
