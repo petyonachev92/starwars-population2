@@ -44,7 +44,7 @@ export default class StarWarsUniverse extends EventEmitter {
         this.planet = planet;
 
         planet.on(Planet.events.PERSON_BORN, (obj) => this._onPersonBorn(obj.filmUrls) )
-        planet.on(Planet.events.POPULATING_COMPLETED, () => { this.emit(StarWarsUniverese.events.UNIVERSE_POPULATED)}) 
+        planet.on(Planet.events.POPULATING_COMPLETED, () => { this.emit(StarWarsUniverse.events.UNIVERSE_POPULATED)}) 
 
         await planet.populate();
 
@@ -58,7 +58,7 @@ export default class StarWarsUniverse extends EventEmitter {
 
                 const film = new Film(url)
                 this.films.push(film)
-                this.emit(StarWarsUniverese.events.FILM_ADDED)
+                this.emit(StarWarsUniverse.events.FILM_ADDED)
             }
         });
         
