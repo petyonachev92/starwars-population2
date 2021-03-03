@@ -29,23 +29,20 @@ export default class Planet extends EventEmitter {
     }
 
     async populate() {
-        let element = this.peopleData[i]
+        /* let element = this.peopleData[i] */
 
-        if (i < 10) {
+        this.peopleData.forEach(element => {
             
-            await delay(this.config.populationDelay)
-
+            delay(this.config.populationDelay)
+    
             const person = new Person(element.name, element.height, element.mass);
-
+    
             this.population.push(person)
-
+    
             this.emit(Planet.events.PERSON_BORN, {filmUrls: element.films});
+        });
 
-            i++;
-            await this.populate();
-        } else {
-            this.emit(Planet.events.POPULATING_COMPLETED);
-        }
+        this.emit(Planet.events.POPULATING_COMPLETED);
 
     }
 }
