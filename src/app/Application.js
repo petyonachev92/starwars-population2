@@ -17,8 +17,6 @@ export default class Application extends EventEmitter {
     this.config = config;
     this.data = {};
 
-    this.on(Application.events.APP_READY, () => console.log('app_ready event emitted'))
-
     this.init();
   }
 
