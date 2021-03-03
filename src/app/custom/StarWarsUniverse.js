@@ -10,7 +10,7 @@ const EVENTS = {
 export default class StarWarsUniverse extends EventEmitter {
     constructor() {
         super();
-        this.films = new Array()
+        this.films = []
         this.planet = null;
     }
 
@@ -30,7 +30,6 @@ export default class StarWarsUniverse extends EventEmitter {
 
             if (+respData.population == 0) {
                 dataForPlanet = respData;
-                console.log(dataForPlanet)
             }
             
         }
