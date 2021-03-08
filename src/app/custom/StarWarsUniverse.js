@@ -44,8 +44,9 @@ export default class StarWarsUniverse extends EventEmitter {
 
         this.planet.on(Planet.events.PERSON_BORN, (obj) => this._onPersonBorn(obj.filmUrls) )
         this.planet.on(Planet.events.POPULATING_COMPLETED, () => { this.emit(StarWarsUniverse.events.UNIVERSE_POPULATED)}) 
-        this.on(StarWarsUniverse.events.UNIVERSE_POPULATED, () => console.log('universe populated'))
-        await planet.populate();
+        this.on(StarWarsUniverse.events.UNIVERSE_POPULATED, () => console.log(this.planet.populationCount))
+        this.on(StarWarsUniverse.events.UNIVERSE_POPULATED, () => console.log(this.films.length))
+        planet.populate();
 
     }
 
