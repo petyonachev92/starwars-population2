@@ -5,5 +5,11 @@ export default class Person {
         this.name = name
         this.height = height
         this.mass = mass
+
+        this.init()
+    }
+
+    init() {
+        console.log(`Person ${this.name} Created!`)
     }
 }

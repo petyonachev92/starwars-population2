@@ -1,6 +1,9 @@
+
 import EventEmitter from "eventemitter3";
+import delay from "../utils";
 import Film from "./Film";
 import Planet from "./Planet";
+
 
 const EVENTS = {
     FILM_ADDED: 'film_added',
@@ -43,7 +46,7 @@ export default class StarWarsUniverse extends EventEmitter {
         this.planet = planet;
 
         this.planet.on(Planet.events.PERSON_BORN, (obj) => this._onPersonBorn(obj.filmUrls) )
-        this.planet.on(Planet.events.POPULATING_COMPLETED, () => { this.emit(StarWarsUniverse.events.UNIVERSE_POPULATED)}) 
+        this.planet.on(Planet.events.POPULATING_COMPLETED, () => { delay(2, () => this.emit(StarWarsUniverse.events.UNIVERSE_POPULATED)) }) 
         this.on(StarWarsUniverse.events.UNIVERSE_POPULATED, () => console.log(this.planet.populationCount))
         this.on(StarWarsUniverse.events.UNIVERSE_POPULATED, () => console.log(this.films.length))
         planet.populate();
