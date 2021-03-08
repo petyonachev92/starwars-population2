@@ -29,9 +29,9 @@ export default class Planet extends EventEmitter {
     }
 
     async populate() {
-        let element = this.peopleData[i]
-
+        
         for (let i = 0; i < this.peopleData.length; i++) {
+            let element = this.peopleData[i]
 
             await delay(this.config.populationDelay)
     
